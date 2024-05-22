@@ -1,28 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-       /* Add CSS here */
-
-      /* Basic Selectors */
-      {
-      
+<head>
+  <style>
+    /* Add your CSS here */
+    div span b {
+        color: purple;
       }
-    </style>
-  </head>
-  <body>
-    <div>This is a div</div>
-    <span>This is a span</span>
-    <div>This is a div</div>
-      <span>
-        <b>Nested text goes here</b>
-      </span>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-    </ul>
-  </body>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid black;
+      }
+      / Styling for bolding direct child li of ul /
+      ul > li {
+        font-weight: bold;
+      }
+      / Styling for general sibling of ul a /
+      ul ~ a {
+        color: green;
+      }
+      input[type="checkbox"]:checked {
+        background-color: yellow !important; / Using !important to ensure override /
+        -webkit-appearance: none; / Disables native styling /
+        appearance: none;
+        width: 20px; / Custom size /
+        height: 20px; / Custom size /
+      }
+      input[type="checkbox"]:checked:after {
+        content: "✓";
+        display: block;
+        color: black;
+        position: relative;
+        left: 5px; / Center the check mark /
+        top: -3px;
+      }
+      / Styling for focused input that applied red border 2px thick/
+      input:focus {
+        border: 2px solid red !important;
+      }
+      / Styling for disabled input that applieds grey background with white text */
+      input:disabled {
+        background-color: grey;
+        color: white;
+}
+      /* Styling for first child of li element that creates a blue background color */
+      li:first-child {
+        background-color: blue;
+      }
+      a {
+        text-decoration: none;
+      }
+      / Styling that underlines the last-of-type of a element /
+      a:last-of-type {
+        text-decoration: underline;
+      }
+      / Styling for all elements within li that are NOT the first-child /
+      li:not(:first-child) {
+        color: orange;
+      }
+      /* Styling for an element that if it is required with text then create a black shadow */
+      input[type="text"][required] {
+        box-shadow: 1px 1px 5px black;
+      }
+  </style>
+</head>
+<body>
+  <div>This is a div</div>
+  <div class="box">This div has a class "box"</div>
+  <span>This is a span</span>
+  <button>Click me</button>
+  <input type="text" required>
+  <input type="checkbox" checked>
+  <input type="radio" disabled>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <div>
+    <span>
+      <b>nested text</b>
+    </span>
+  </div>
+</body>
 </html>
